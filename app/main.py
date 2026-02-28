@@ -47,6 +47,16 @@ async def get_item(item_id: int):
         "name": f"Item {item_id}",
         "description": f"This is item number {item_id}",
     }
+    
+@app.post("/api/items")
+async def create_item(name: str, description: str):
+    """Create a new item."""
+    return {
+        "id": 999,
+        "name": name,
+        "description": description,
+        "created": True
+    }
 
 
 if __name__ == "__main__":
